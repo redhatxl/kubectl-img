@@ -138,5 +138,5 @@ $ kubectl img image --deployments -n default -j
 
 ## Blog
 
-* https://redhatxl.github.io/cloud-native/develop/04-Cobra%20%2B%20Client-go%E5%AE%9E%E7%8E%B0K8s%E7%AE%80%E5%8D%95%E6%8F%92%E4%BB%B6%E5%BC%80%E5%8F%91/
-* https://juejin.cn/post/6983324056502140964
+* [磊哥的云原生笔记](https://redhatxl.github.io/cloud-native/develop/04-Cobra%20%2B%20Client-go%E5%AE%9E%E7%8E%B0K8s%E7%AE%80%E5%8D%95%E6%8F%92%E4%BB%B6%E5%BC%80%E5%8F%91/)
+* [Cobra + Client-go实现K8s 自定义插件开发](https://juejin.cn/post/6983324056502140964)

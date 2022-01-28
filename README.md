@@ -5,8 +5,9 @@
 
 
 
-
-![Kubectl image Logo](docs/logo/logo.png)
+<p align="center">
+<a href="https://github.com/redhatxl/kubectl-img"><img src="docs/logo/logo.png" alt="banner" width="200px"></a>
+</p>
 
 `kubectl-img` is a kubectl plugin that allows you to show kubernetes resource image.
 

@@ -1,8 +1,8 @@
 
 
-[![ci](https://github.com/redhatxl/kubectl-img/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/redhatxl/kubeimg/actions/workflows/ci.yml)
+[![ci](https://github.com/redhatxl/kubectl-img/actions/workflows/ci.yml/badge.svg)](https://github.com/redhatxl/kubectl-img/actions/workflows/ci.yml)[![Go Report Card](https://goreportcard.com/badge/github.com/redhatxl/kubectl-img)](https://goreportcard.com/report/github.com/redhatxl/kubectl-img)[![GitHub license](https://img.shields.io/github/license/redhatxl/kubectl-img)](https://github.com/redhatxl/kubectl-img/blob/main/LICENSE)
 
-​	
+
 
 
 
@@ -10,33 +10,35 @@
 
 `kubectl-img` is a kubectl plugin that allows you to show kubernetes resource image.
 
-[TOC]
-
-
-
 
 ## Installing
 
 ### Pre-built binaries
 
-See the [release](https://github.com/iovisor/kubectl-img/releases) page for the full list of pre-built assets.
+See the [release](https://github.com/redhatxl/kubectl-img/releases) page for the full list of pre-built assets.
 
 The commands here show `amd64` versions, `386` versions are available in the releases page.
 
 **Linux**
 
 ```bash
-curl -L -o kubectl-img.tar.gz https://github.com/iovisor/kubectl-trace/releases/download/v0.1.0-rc.1/kubectl-trace_0.1.0-rc.1_linux_amd64.tar.gz
-tar -xvf kubectl-trace.tar.gz
-mv kubectl-trace /usr/local/bin/kubectl-trace
+$ export release=v1.0.0
+$ curl -L -o kubectl-img.tar.gz https://github.com/redhatxl/kubectl-img/releases/download/${release}/kubectl-img_${release}_Linux_arm64.tar.gz
+$ tar -xvf kubectl-img.tar.gz
+$ cp kubectl-img /usr/local/bin/kubectl-img
+# use kubectl krew
+$ cp kubectl-img $HOME/.krew/bin
 ```
 
 **OSX**
 
 ```bash
-curl -L -o kubectl-trace.tar.gz https://github.com/iovisor/kubectl-trace/releases/download/v0.1.0-rc.1/kubectl-trace_0.1.0-rc.1_darwin_amd64.tar.gz
-tar -xvf kubectl-trace.tar.gz
-mv kubectl-trace /usr/local/bin/kubectl-trace
+$ export release=v1.0.0
+$ curl -L -o kubectl-img.tar.gz https://github.com/redhatxl/kubectl-img/releases/download/${release}/kubectl-img_${release}_Darwin_x86_64.tar.gz
+$ tar -xvf kubectl-img.tar.gz
+$ mv kubectl-img /usr/local/bin/kubectl-img
+# use kubectl krew
+$ cp kubectl-img $HOME/.krew/bin
 ```
 
 
@@ -44,52 +46,24 @@ mv kubectl-trace /usr/local/bin/kubectl-trace
 
 In PowerShell v5+
 ```powershell
-$url = "https://github.com/iovisor/kubectl-trace/releases/download/v0.1.0-rc.1/kubectl-trace_0.1.0-rc.1_windows_amd64.zip"
-$output = "$PSScriptRoot\kubectl-trace.zip"
+$url = "https://github.com/redhatxl/kubectl-img/releases/download/v1.0.0/kubectl-img_1.0.0_Windows_x86_64.tar.gz"
+$output = "$PSScriptRoot\kubectl-img.zip"
 
 Invoke-WebRequest -Uri $url -OutFile $output
-Expand-Archive "$PSScriptRoot\kubectl-trace.zip" -DestinationPath "$PSScriptRoot\kubectl-trace"
+Expand-Archive "$PSScriptRoot\kubectl-img.zip" -DestinationPath "$PSScriptRoot\kubectl-img"
 ```
+
+
 
 ### Source
 
-Using go modules, you can build kubectl-trace at any git tag:
+Using go modules, you can build kubectl-img at any git tag:
 
 ```
-GO111MODULE=on go get github.com/iovisor/kubectl-trace/cmd/kubectl-trace@latest
+$ GO111MODULE=on go get github.com/redhatxl/kubectl-img/cmd/kubectl-img@latest
 ```
 
-This will download and compile `kubectl-trace` so that you can use it as a kubectl plugin with `kubectl trace`, note that you will need to be on a recent version of go which supports go modules.
-
-To keep track of the ref you used to build, you can add an ldflag at build time to set this to match the ref provided to go modules:
-
-```
-> GO111MODULE=on go get -ldflags='-X github.com/iovisor/kubectl-trace/pkg/version.gitCommit=v0.1.2' github.com/iovisor/kubectl-trace/cmd/kubectl-trace@v0.1.2
-> $GOHOME/bin/kubectl-trace version
-git commit: v0.1.2
-build date: 2021-08-10 12:38:37.921341766 -0400 EDT m=+0.034327432
-```
-
-**Note:** It is recommended you build tagged revisions only if you are looking for stability. Building branches such as `master` or the `latest` tag may result in a more unstable build which has received less QA than a tagged release.
-
-### Packages
-
-You can't find the package for your distro of choice?
-You are very welcome and encouraged to create it and then [open an issue](https://github.com/iovisor/kubectl-trace/issues/new) to inform us for review.
-
-#### Arch - AUR
-
-The official [PKGBUILD](https://aur.archlinux.org/cgit/aur.git/tree/PKGBUILD?h=kubectl-trace-git) is on AUR.
-
-If you use `yay` to manage AUR packages you can do:
-
-```
-yay -S kubectl-trace-git
-```
-
-## Architecture
-
-See [architecture.md](/docs/architecture.md)
+This will download and compile `kubectl-img` so that you can use it as a kubectl plugin with `kubectl img`, note that you will need to be on a recent version of go which supports go modules.
 
 ## Usage
 
@@ -97,7 +71,7 @@ You don't need to setup anything on your cluster before using it, please don't u
 on a production system, just because this isn't yet 100% ready.
 
 ```shell
- xuel@kaliarchmacbookpro  ~  kubectl img image -h
+$ kubectl img image -h
 show k8s resource image
 
 Usage:
@@ -161,3 +135,8 @@ $ kubectl img image --deployments -n default -j
 ```
 
 ![](https://kaliarch-bucket-1251990360.cos.ap-beijing.myqcloud.com/blog_img/20220128113907.png)
+
+## Blog
+
+* https://redhatxl.github.io/cloud-native/develop/04-Cobra%20%2B%20Client-go%E5%AE%9E%E7%8E%B0K8s%E7%AE%80%E5%8D%95%E6%8F%92%E4%BB%B6%E5%BC%80%E5%8F%91/
+* https://juejin.cn/post/6983324056502140964

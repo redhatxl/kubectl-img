@@ -7,7 +7,7 @@ import (
 
 var KubernetesConfigFlags *genericclioptions.ConfigFlags
 
-const version = "v1.0.1"
+const version = "v1.0.0"
 
 // rootCmd represents the base command when called without any subcommands
 var rootCmd = &cobra.Command{

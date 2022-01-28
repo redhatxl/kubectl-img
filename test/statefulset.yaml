@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: etcd
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: etcd
+  serviceName: etcd-svc
+  template:
+    metadata:
+      labels:
+        app: etcd
+    spec:
+      containers:
+      - env:
+        - name: PAAS_APP_NAME
+          value: tesyhhj
+        - name: PAAS_NAMESPACE
+          value: default
+        - name: PAAS_PROJECT_ID
+          value: 9632fae707ce4416a0ab1e3e121fe555
+        image: etcd    #若使用“开源镜像中心”的镜像，可直接填写镜像名称；若使用“我的镜像”中的镜像，请在SWR中获取具体镜像地址。
+        imagePullPolicy: IfNotPresent
+        name: container-0
+  updateStrategy:
+    type: RollingUpdate

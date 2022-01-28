@@ -23,23 +23,23 @@ The commands here show `amd64` versions, `386` versions are available in the rel
 **Linux**
 
 ```bash
-$ export release=v1.0.0
-$ curl -L -o kubectl-img.tar.gz https://github.com/redhatxl/kubectl-img/releases/download/${release}/kubectl-img_${release}_Linux_arm64.tar.gz
-$ tar -xvf kubectl-img.tar.gz
-$ cp kubectl-img /usr/local/bin/kubectl-img
+export release=v1.0.0
+curl -L -o kubectl-img.tar.gz https://github.com/redhatxl/kubectl-img/releases/download/${release}/kubectl-img_${release}_Linux_arm64.tar.gz
+tar -xvf kubectl-img.tar.gz
+cp kubectl-img /usr/local/bin/kubectl-img
 # use kubectl krew
-$ cp kubectl-img $HOME/.krew/bin
+cp kubectl-img $HOME/.krew/bin
 ```
 
 **OSX**
 
 ```bash
-$ export release=v1.0.0
-$ curl -L -o kubectl-img.tar.gz https://github.com/redhatxl/kubectl-img/releases/download/${release}/kubectl-img_${release}_Darwin_x86_64.tar.gz
-$ tar -xvf kubectl-img.tar.gz
-$ mv kubectl-img /usr/local/bin/kubectl-img
+export release=v1.0.0
+curl -L -o kubectl-img.tar.gz https://github.com/redhatxl/kubectl-img/releases/download/${release}/kubectl-img_${release}_Darwin_x86_64.tar.gz
+tar -xvf kubectl-img.tar.gz
+mv kubectl-img /usr/local/bin/kubectl-img
 # use kubectl krew
-$ cp kubectl-img $HOME/.krew/bin
+cp kubectl-img $HOME/.krew/bin
 ```
 
 
@@ -110,9 +110,9 @@ Global Flags:
 
 ```shell
 # View the images of all deployments of the entire kubernetes cluster
-$ kubectl img image --deployments
+kubectl img image --deployments
 # View the images of all deployments of the entire kubernetes cluster
-$ kubectl img image --deployments -n default
+kubectl img image --deployments -n default
 ```
 
 ![](https://kaliarch-bucket-1251990360.cos.ap-beijing.myqcloud.com/blog_img/20220128112944.png)
@@ -121,7 +121,7 @@ $ kubectl img image --deployments -n default
 
 ```shell
 # view all resource 
-$ kubectl img image -bedof
+kubectl img image -bedof
 ```
 
 ![](https://kaliarch-bucket-1251990360.cos.ap-beijing.myqcloud.com/blog_img/20220128114642.png)
@@ -132,7 +132,7 @@ Table display is used by default
 
 ```shell
 # Table display is used by default
-$ kubectl img image --deployments -n default -j
+kubectl img image --deployments -n default -j
 ```
 
 ![](https://kaliarch-bucket-1251990360.cos.ap-beijing.myqcloud.com/blog_img/20220128113907.png)

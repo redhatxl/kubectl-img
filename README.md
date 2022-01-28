@@ -1,6 +1,6 @@
 
 
-[![ci](https://github.com/redhatxl/kubectl-img/actions/workflows/ci.yml/badge.svg)](https://github.com/redhatxl/kubectl-img/actions/workflows/ci.yml)[![Go Report Card](https://goreportcard.com/badge/github.com/redhatxl/kubectl-img)](https://goreportcard.com/report/github.com/redhatxl/kubectl-img)[![GitHub license](https://img.shields.io/github/license/redhatxl/kubectl-img)](https://github.com/redhatxl/kubectl-img/blob/main/LICENSE)
+[![ci](https://github.com/redhatxl/kubectl-img/actions/workflows/ci.yml/badge.svg)](https://github.com/redhatxl/kubectl-img/actions/workflows/ci.yml) [![Go Report Card](https://goreportcard.com/badge/github.com/redhatxl/kubectl-img)](https://goreportcard.com/report/github.com/redhatxl/kubectl-img) [![GitHub license](https://img.shields.io/github/license/redhatxl/kubectl-img)](https://github.com/redhatxl/kubectl-img/blob/main/LICENSE)
 
 
 

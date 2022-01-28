@@ -30,3 +30,5 @@ changelog:
     exclude:
       - '^docs:'
       - '^test:'
+
+project_name: kubeimg

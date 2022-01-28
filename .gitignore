@@ -1,6 +1,6 @@
 dist
 release
-kubeimg
+kubectl-img
 
 coverage.txt
 

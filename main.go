@@ -15,7 +15,7 @@ limitations under the License.
 */
 package main
 
-import "kubeimg/cmd"
+import "github.com/redhatxl/kubectl-img/cmd"
 
 func main() {
 	cmd.Execute()

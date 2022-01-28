@@ -31,4 +31,4 @@ changelog:
       - '^docs:'
       - '^test:'
 
-project_name: kubeimg
+project_name: kubectl-img

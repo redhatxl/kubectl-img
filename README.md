@@ -1,6 +1,6 @@
 
 
-[![ci](https://github.com/redhatxl/kubeimg/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/redhatxl/kubeimg/actions/workflows/ci.yml)
+[![ci](https://github.com/redhatxl/kubectl-img/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/redhatxl/kubeimg/actions/workflows/ci.yml)
 
 ​	
 
@@ -8,7 +8,7 @@
 
 ![Kubectl image Logo](docs/logo/logo.png)
 
-`kubectl image` is a kubectl plugin that allows you to show kubernetes resource image.
+`kubectl-img` is a kubectl plugin that allows you to show kubernetes resource image.
 
 [TOC]
 
@@ -19,7 +19,7 @@
 
 ### Pre-built binaries
 
-See the [release](https://github.com/iovisor/kubectl-trace/releases) page for the full list of pre-built assets.
+See the [release](https://github.com/iovisor/kubectl-img/releases) page for the full list of pre-built assets.
 
 The commands here show `amd64` versions, `386` versions are available in the releases page.
 

@@ -3,13 +3,13 @@ package cmd
 import (
 	"context"
 	"fmt"
+	"github.com/redhatxl/kubectl-img/pkg/kube"
+	"github.com/redhatxl/kubectl-img/pkg/mtable"
 	"github.com/spf13/cobra"
 	kv1 "k8s.io/api/apps/v1"
 	jobv1 "k8s.io/api/batch/v1"
 	cjobv1 "k8s.io/api/batch/v1beta1"
 	v1 "k8s.io/apimachinery/pkg/apis/meta/v1"
-	"kubeimg/pkg/kube"
-	"kubeimg/pkg/mtable"
 )
 
 // imageCmd represents the image command
@@ -138,7 +138,7 @@ func image(cmd *cobra.Command, args []string) error {
 		fmt.Printf(`
 no resource
 Usage:
-  kubeimg image [flags]
+  kubectl-img image [flags]
 
 Flags:
   -b, --cronjobs       show cronjobs image

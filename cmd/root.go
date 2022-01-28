@@ -11,8 +11,8 @@ const version = "v1.0.1"
 
 // rootCmd represents the base command when called without any subcommands
 var rootCmd = &cobra.Command{
-	Use:     "kubeimg",
-	Short:   "kubeimg is s k8s resource image show ",
+	Use:     "kubectl-img",
+	Short:   "kubectl-img is s k8s resource image show ",
 	Long:    ``,
 	Version: version,
 	// Uncomment the following line if your bare application

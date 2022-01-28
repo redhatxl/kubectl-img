@@ -1,4 +1,4 @@
-module kubeimg
+module github.com/redhatxl/kubectl-img
 
 go 1.15
 

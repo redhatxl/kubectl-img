@@ -1,3 +1,11 @@
+
+
+[![ci](https://github.com/redhatxl/kubeimg/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/redhatxl/kubeimg/actions/workflows/ci.yml)
+
+​	
+
+
+
 ![Kubectl image Logo](docs/logo/logo.png)
 
 `kubectl image` is a kubectl plugin that allows you to show kubernetes resource image.

@@ -1,0 +1,16 @@
+dist
+release
+kubeimg
+
+coverage.txt
+
+# GoLand / IntelliJ IDEA project config files
+.idea/
+
+
+# Directory Cache Files
+.DS_Store
+thumbs.db
+
+*.json
+dist/
